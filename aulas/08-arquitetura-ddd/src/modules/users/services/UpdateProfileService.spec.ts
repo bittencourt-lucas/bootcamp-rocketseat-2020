@@ -110,4 +110,16 @@ describe('UpdateProfile', () => {
       }),
     ).rejects.toBeInstanceOf(AppError);
   });
+
+  it('should not be able to update invalid profile', async () => {
+    await expect(
+      updateProfile.execute({
+        user_id: 'fake',
+        name: 'Jane Doe',
+        email: 'janedoe@example.com',
+        old_password: '123123',
+        password: '123123',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
+  });
 });
