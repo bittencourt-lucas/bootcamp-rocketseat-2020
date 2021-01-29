@@ -4,14 +4,14 @@ import ListProvidersService from './ListProvidersService';
 let fakeUsersRepository: FakeUsersRepository;
 let listProviders: ListProvidersService;
 
-describe('ShowProfile', () => {
+describe('ListProviders', () => {
   beforeEach(() => {
     fakeUsersRepository = new FakeUsersRepository();
 
     listProviders = new ListProvidersService(fakeUsersRepository);
   });
 
-  it('should be able to show the profile', async () => {
+  it('should be able to list the providers', async () => {
     const johndoe = await fakeUsersRepository.create({
       name: 'John Doe',
       email: 'johndoe@example.com',
