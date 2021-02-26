@@ -204,7 +204,6 @@ const CreateAppointment: React.FC = () => {
             <DateTimePicker
               mode="date"
               display="calendar"
-              textColor="#f4ede8"
               onChange={handleDateChanged}
               value={selectedDate}
             />
