@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FiClock, FiPower } from 'react-icons/fi';
 
 import { useAuth } from '../../hooks/auth';
@@ -11,12 +11,16 @@ import {
   HeaderContent,
   Profile,
   Content,
-  Schedule,
   NextAppointment,
+  Section,
+  Appointment,
+  Schedule,
   Calendar
 } from './styles';
 
 const Dashboard: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
   const { signOut, user } = useAuth();
 
   return(
@@ -39,7 +43,7 @@ const Dashboard: React.FC = () => {
       </Header>
       <Content>
         <Schedule>
-          <h1>Horários Agendados</h1>
+          <h1>Horários agendados</h1>
           <p>
             <span>Hoje</span>
             <span>Dia 06</span>
@@ -57,6 +61,50 @@ const Dashboard: React.FC = () => {
               </span>
             </div>
           </NextAppointment>
+          <Section>
+            <strong>Manhã</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img src="https://s2.glbimg.com/tYauM0ohcCFd1-D4dZyS4gZN7Q0=/0x0:1280x853/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2020/D/Q/NYYDWXQFG9FCq7CBnzaA/pizza.jpeg" alt="Pizza" />
+                <strong>Lucas Bittencourt</strong>
+              </div>
+            </Appointment>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img src="https://s2.glbimg.com/tYauM0ohcCFd1-D4dZyS4gZN7Q0=/0x0:1280x853/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2020/D/Q/NYYDWXQFG9FCq7CBnzaA/pizza.jpeg" alt="Pizza" />
+                <strong>Lucas Bittencourt</strong>
+              </div>
+            </Appointment>
+
+          </Section>
+          <Section>
+            <strong>Tarde</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img src="https://s2.glbimg.com/tYauM0ohcCFd1-D4dZyS4gZN7Q0=/0x0:1280x853/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2020/D/Q/NYYDWXQFG9FCq7CBnzaA/pizza.jpeg" alt="Pizza" />
+                <strong>Lucas Bittencourt</strong>
+              </div>
+            </Appointment>
+
+          </Section>
         </Schedule>
       <Calendar />
     </Content>
